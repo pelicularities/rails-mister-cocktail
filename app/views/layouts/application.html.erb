@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mister Cocktail</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Mister Cocktail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+</head>
 
-  <body>
-    <div class="container mt-3">
-      <div class="row">
-        <div class="col">
-          <%= yield %>
-        </div>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <h1><a class="navbar-brand" href="/">Mister Cocktail</a></h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <%= link_to new_cocktail_path(@cocktail), class: 'btn btn-secondary mx-3' do %>
+        <i class="fas fa-plus"></i> New Cocktail
+      <% end %>
+      <%= link_to cocktails_path, class: 'btn btn-secondary mx-3' do %>
+        <i class="fas fa-cocktail"></i> All Cocktails
+      <% end %>
+    </div>
+  </nav>
+  <div class="container text-light mt-3 p-3">
+    <div class="row">
+      <div class="col">
+        <%= yield %>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>

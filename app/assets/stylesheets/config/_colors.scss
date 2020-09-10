@@ -1,10 +1,19 @@
 // Define variables for your color scheme
 
-// For example:
-$red: #FD1015;
-$blue: #167FFB;
-$yellow: #FFC65A;
+// whites and blacks
+$light-gray: #F4F4F4;
+$ivory: #F6F7EB;
+$gray: #0E0000;
+$black: #000000;
+
+// rgb colours
+$red: #F42C04;
+$yellow: #F49F0A;
 $orange: #E67E22;
 $green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
+$teal: #06AFB2;
+$blue: #167FFB;
+
+// colours with alpha layer
+$transparent: rgba(0, 0, 0, 0.0);
+$transparent-20: rgba(255, 255, 255, 0.2);
