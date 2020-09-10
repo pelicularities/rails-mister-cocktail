@@ -18,7 +18,7 @@ require("channels")
 
 import 'bootstrap';
 
-import { randomCocktailBackground } from '../components/background.js.erb'
+import { randomCocktailBackground } from '../components/background'
 
 document.addEventListener('turbolinks:load', () => {
   randomCocktailBackground();
