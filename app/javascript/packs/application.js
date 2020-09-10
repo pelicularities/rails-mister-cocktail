@@ -17,3 +17,9 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import 'bootstrap';
+
+import { randomCocktailBackground } from '../components/background.js.erb'
+
+document.addEventListener('turbolinks:load', () => {
+  randomCocktailBackground();
+});

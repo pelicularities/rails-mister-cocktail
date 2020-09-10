@@ -4,3 +4,6 @@
     <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
   <% end %>
 </ul>
+<div>
+  <%= link_to 'Create New Cocktail', new_cocktail_path(@cocktail), class: 'btn btn-primary my-3' %>
+</div>
