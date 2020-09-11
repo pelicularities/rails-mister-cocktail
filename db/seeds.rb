@@ -35,14 +35,20 @@ puts 'seeding cocktails...'
     new_cocktail.photo.attach(io: photo, filename: "#{name}.jpg", content_type: 'image/jpg')
     new_cocktail.save!
     puts "#{name} seeded!"
+
     # seed doses
     puts "seeding doses for #{name}..."
     num = 1
     until cocktail["strMeasure#{num}"].nil?
+      # safety check, since there is no strMeasure16
       break if num == 16
       puts "seeding ingredient #{num}..."
       ingredient = Ingredient.all.sample
       description = cocktail["strMeasure#{num}"]
+
+      # because it is possible for Ingredient.all.sample to choose an already sampled ingredient,
+      # Dose.create is not guaranteed to work except for the first ingredient for any given cocktail
+      # if it fails, no big deal, just keep going
       Dose.create(description: description, ingredient: ingredient, cocktail: new_cocktail)
       num += 1
     end
