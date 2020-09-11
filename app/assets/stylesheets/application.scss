@@ -12,10 +12,7 @@
 @import "components/index";
 @import "pages/index";
 
-// defining the random background that will be used
-
 body {
-  background-image: asset-url("backgrounds/background#{math.random(11)}.jpg");
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -24,4 +21,38 @@ body {
 }
 .container {
   background-color: rgba(0,0,0,0.8);
+}
+
+.bg-1 {
+  background-image: asset-url("backgrounds/background1.jpg");
+}
+.bg-2 {
+  background-image: asset-url("backgrounds/background2.jpg");
+}
+.bg-3 {
+  background-image: asset-url("backgrounds/background3.jpg");
+}
+.bg-4 {
+  background-image: asset-url("backgrounds/background4.jpg");
+}
+.bg-5 {
+  background-image: asset-url("backgrounds/background5.jpg");
+}
+.bg-6 {
+  background-image: asset-url("backgrounds/background6.jpg");
+}
+.bg-7 {
+  background-image: asset-url("backgrounds/background7.jpg");
+}
+.bg-8 {
+  background-image: asset-url("backgrounds/background8.jpg");
+}
+.bg-9 {
+  background-image: asset-url("backgrounds/background9.jpg");
+}
+.bg-10 {
+  background-image: asset-url("backgrounds/background10.jpg");
+}
+.bg-11 {
+  background-image: asset-url("backgrounds/background11.jpg");
 }

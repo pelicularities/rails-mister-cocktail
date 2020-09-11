@@ -18,8 +18,8 @@ require("channels")
 
 import 'bootstrap';
 
-// import { randomCocktailBackground } from '../components/background'
+import { randomCocktailBackground } from '../components/background'
 
 document.addEventListener('turbolinks:load', () => {
-  // randomCocktailBackground();
+  randomCocktailBackground();
 });
