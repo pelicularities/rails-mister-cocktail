@@ -9,13 +9,14 @@ require 'open-uri'
 
 Ingredient.destroy_all
 
-url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-data = JSON.parse(open(url).read)
+ingredients_url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+ingredients_data = JSON.parse(open(ingredients_url).read)
 
 puts 'seeding ingredients...'
 
-data['drinks'].each do |ingredient_hash|
+ingredients_data['drinks'].each do |ingredient_hash|
   Ingredient.create!(name: ingredient_hash["strIngredient1"])
 end
+
 
 puts 'completed seeding!'
