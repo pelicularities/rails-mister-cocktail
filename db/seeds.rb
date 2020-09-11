@@ -24,28 +24,26 @@ puts "#{Ingredient.count} ingredients seeded!"
 
 puts 'seeding cocktails...'
 
-('a'..'b').to_a.each do |letter|
-  cocktails_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=#{letter}"
-  cocktails_data = JSON.parse(open(cocktails_url).read)
+cocktails_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=g"
+cocktails_data = JSON.parse(open(cocktails_url).read)
 
-  cocktails_data["drinks"].each do |cocktail|
-    name = cocktail['strDrink']
-    photo = URI.open(cocktail['strDrinkThumb'])
-    new_cocktail = Cocktail.new(name: name)
-    new_cocktail.photo.attach(io: photo, filename: "#{name}.jpg", content_type: 'image/jpg')
-    new_cocktail.save!
-    puts "#{name} seeded!"
-    # seed doses
-    puts "seeding doses for #{name}..."
-    num = 1
-    until cocktail["strMeasure#{num}"].nil?
-      break if num == 16
-      puts "seeding ingredient #{num}..."
-      ingredient = Ingredient.all.sample
-      description = cocktail["strMeasure#{num}"]
-      Dose.create!(description: description, ingredient: ingredient, cocktail: new_cocktail)
-      num += 1
-    end
+cocktails_data["drinks"].each do |cocktail|
+  name = cocktail['strDrink']
+  photo = URI.open(cocktail['strDrinkThumb'])
+  new_cocktail = Cocktail.new(name: name)
+  new_cocktail.photo.attach(io: photo, filename: "#{name}.jpg", content_type: 'image/jpg')
+  new_cocktail.save!
+  puts "#{name} seeded!"
+  # seed doses
+  puts "seeding doses for #{name}..."
+  num = 1
+  until cocktail["strMeasure#{num}"].nil?
+    break if num == 16
+    puts "seeding ingredient #{num}..."
+    ingredient = Ingredient.all.sample
+    description = cocktail["strMeasure#{num}"]
+    Dose.create!(description: description, ingredient: ingredient, cocktail: new_cocktail)
+    num += 1
   end
 end
 
