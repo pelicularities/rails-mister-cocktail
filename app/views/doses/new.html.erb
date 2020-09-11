@@ -1,7 +1,9 @@
-<h1>Add Dose</h1>
-<%= simple_form_for [ @cocktail, @dose ] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit "Save Dose to #{@cocktail.name}", class: 'btn btn-primary my-3' %>
-<% end %>
-<%= link_to 'Go Back Without Saving', cocktail_path(@cocktail), class: 'btn btn-danger my-3' %>
+<div class="col-6">
+  <h1>Add Dose</h1>
+  <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <%= f.submit "Save Dose to #{@cocktail.name}", class: 'btn btn-primary my-3' %>
+  <% end %>
+  <%= link_to 'Go Back Without Saving', cocktail_path(@cocktail), class: 'btn btn-danger my-3' %>
+</div>

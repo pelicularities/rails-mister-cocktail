@@ -1,8 +1,11 @@
-<h1>Create New Cocktail</h1>
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.submit 'Save New Cocktail', class: 'btn btn-primary my-3' %>
-<% end %>
-<div>
-  <%= link_to 'Back To All Cocktails', cocktails_path, class: 'btn btn-warning my-3' %>
+<div class="col-6">
+  <h1>Create New Cocktail</h1>
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit 'Save New Cocktail', class: 'btn btn-primary my-3' %>
+  <% end %>
+  <div>
+    <%= link_to 'Back To All Cocktails', cocktails_path, class: 'btn btn-warning my-3' %>
+  </div>
 </div>
