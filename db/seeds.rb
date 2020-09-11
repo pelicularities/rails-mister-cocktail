@@ -24,7 +24,7 @@ puts "#{Ingredient.count} ingredients seeded!"
 
 puts 'seeding cocktails...'
 
-('a'..'e').to_a.each do |letter|
+('a'..'b').to_a.each do |letter|
   cocktails_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=#{letter}"
   cocktails_data = JSON.parse(open(cocktails_url).read)
 
@@ -33,7 +33,7 @@ puts 'seeding cocktails...'
     photo = URI.open(cocktail['strDrinkThumb'])
     new_cocktail = Cocktail.new(name: name)
     new_cocktail.photo.attach(io: photo, filename: "#{name}.jpg", content_type: 'image/jpg')
-    new_cocktail.save
+    new_cocktail.save!
     puts "#{name} seeded!"
     # seed doses
     puts "seeding doses for #{name}..."
