@@ -1,8 +1,17 @@
-<div class="col">
-  <h1>All Cocktails</h1>
-  <ul>
-	<% @cocktails.order(name: :asc).each do |cocktail| %>
-      <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-    <% end %>
-  </ul>
+<div class="row">
+  <div class="col">
+    <h1>All Cocktails</h1>
+  </div>
+</div>
+<div class="row">
+  <% @cocktails.order(name: :asc).each do |cocktail| %>
+    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+      <%= link_to cocktail_path(cocktail) do %>
+        <%= cl_image_tag cocktail.photo.key, class: 'card-img-top thumb rounded', crop: :fill %>
+        <div class="card-body text-center font-weight-bold">
+          <%= cocktail.name %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
