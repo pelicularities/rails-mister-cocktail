@@ -33,7 +33,7 @@ puts 'seeding cocktails...'
     photo = URI.open(cocktail['strDrinkThumb'])
     new_cocktail = Cocktail.new(name: name)
     new_cocktail.photo.attach(io: photo, filename: "#{name}.jpg", content_type: 'image/jpg')
-    new_cocktail.save!
+    next unless new_cocktail.save
     puts "#{name} seeded!"
 
     # seed doses
