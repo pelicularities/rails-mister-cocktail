@@ -12,8 +12,10 @@
 @import "components/index";
 @import "pages/index";
 
+// defining the random background that will be used
+
 body {
-  background-image: asset-url('backgrounds/background1.jpg');
+  background-image: asset-url("backgrounds/background#{math.random(11)}.jpg");
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
