@@ -1,3 +1,6 @@
+// Built-in modules
+@use "sass:map";
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -55,4 +58,14 @@ body {
 }
 .bg-11 {
   background-image: asset-url("backgrounds/background11.jpg");
+}
+
+.thumb-wrapper {
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .thumb-wrapper {
+    margin-bottom: 3rem !important;
+  }
 }
