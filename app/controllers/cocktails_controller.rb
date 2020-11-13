@@ -1,8 +1,10 @@
 # Possible actions in CocktailsController:
 # display all, display one, create new cocktail
+include Pagy::Backend
+
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    @pagy, @cocktails = pagy(Cocktail.all)
   end
 
   def show

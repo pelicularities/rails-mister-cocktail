@@ -32,6 +32,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'autoprefixer-rails'
 gem 'cloudinary', '~> 1.16.0'
 gem 'font-awesome-sass', '~> 5.12.0'
+gem 'pagy', '~> 3.5'
 gem 'simple_form'
 
 group :development, :test do
