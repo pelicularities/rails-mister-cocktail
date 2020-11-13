@@ -4,7 +4,7 @@ This is a Rails project I did as part of [Le Wagon's](https://www.lewagon.com/) 
 
 ## To-do list
 - [x] Paginate all cocktails page
-- [ ] Enlarge Mister Cocktail header on navbar
+- [x] Enlarge Mister Cocktail header on navbar
 - [ ] Fix responsive layout for navbar (menu items align left instead of right)
 - [ ] Fix responsive layout on show page (content is slightly off-centre)
 - [ ] Fix responsive layout on new page (content is slightly off-centre)
