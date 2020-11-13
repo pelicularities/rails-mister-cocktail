@@ -19,12 +19,14 @@
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <%= link_to new_cocktail_path(@cocktail), class: 'btn btn-secondary mx-3' do %>
-        <i class="fas fa-plus"></i> New Cocktail
-      <% end %>
-      <%= link_to root_path, class: 'btn btn-secondary mx-3' do %>
-        <i class="fas fa-cocktail"></i> All Cocktails
-      <% end %>
+      <div class="text-right">
+        <%= link_to new_cocktail_path(@cocktail), class: 'btn btn-secondary' do %>
+          <i class="fas fa-plus"></i> New Cocktail
+        <% end %>
+        <%= link_to root_path, class: 'btn btn-secondary' do %>
+          <i class="fas fa-cocktail"></i> All Cocktails
+        <% end %>
+      </div>
     </div>
   </nav>
   <div class="container text-light mt-3 p-3">
