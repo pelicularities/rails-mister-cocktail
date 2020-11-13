@@ -8,4 +8,5 @@ This is a Rails project I did as part of [Le Wagon's](https://www.lewagon.com/) 
 - [x] Fix responsive layout for navbar (menu items align left instead of right)
 - [ ] Fix responsive layout on show page (content is slightly off-centre)
 - [ ] Fix responsive layout on new page (content is slightly off-centre)
+- [x] Change cocktails per page on #index from 20 to 24
 - [ ] Add About page
